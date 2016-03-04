@@ -26,12 +26,12 @@
         $('#call').click(call);
         $('#text').click(text);
         $('#email').click(email);
-        $('#search').each(search);
+        $('#search').click(search);
     };
 
     function setConstraints() {
         var height = page.offsetHeight - (header.offsetHeight + footer.offsetHeight);
-        $('#main').attr("style", "height: "+height+"px");
+        $('#main').attr("style", "height: " + height + "px");
     }
 
     //Enables buttons if table is click
@@ -63,6 +63,7 @@
                 filterTable(elem.val());
             }
         });
+        setConstraints();
     }
 
     //FILTERS TABLE, USED BY SEARCHBAR
@@ -212,7 +213,6 @@
             node.addEventListener("click", rowClick.bind(node), false);
             directory.appendChild(node);
         }
-        setConstraints();
     }
 
     function onPause() {
