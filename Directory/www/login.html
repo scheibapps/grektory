@@ -8,42 +8,34 @@
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://grektory.herokuapp.com http://i.imgur.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <title>Directory</title>
+    <title>Grektory</title>
     <!-- Directory references -->
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
     <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
 </head>
 <body>
     <div data-role="page" id="page">
-        <div id="load" hidden></div>
-        <div data-role="header" class="header" id="header" align="center">
-            <h1 id="title">DIRECTORY</h1>
-            <div id="search_div">
-                <input type="text" placeholder="Search..." id="search" maxlength="50"/>
+        <div id="load"></div>
+        <div data-role="header" class="header" id="header">
+            <h1 id="title">GREKTORY</h1>
+            <img id="header-img" src="http://i.imgur.com/0HOe6UO.png" />
+        </div>
+        <div role="main" id="main" class="ui-content" align="center">
+            <div id="form">
+                <input id="key" maxlength="8" placeholder="directory public key" />
+                <button id="login">LOGIN</button>
+                <h3>OR</h3>
+                <button id="url">CREATE DIRECTORY</button>
             </div>
         </div>
-        <div role="main" id="main" class="ui-content">
-            <ul id="directory" data-role="listview">
-            </ul>
-        </div>
         <div data-role="footer" class="footer" id="footer">
-            <table id="button-table">
-                <tr>
-                    <td><button id="call">CALL</button></td>
-                    <td><button id="text">TEXT</button></td>
-                </tr>
-                <tr>
-                    <td><button id="email">EMAIL</button></td>
-                    <td><button id="add">ADD</button></td>
-                </tr>
             
-            </table>
         </div>
     </div>
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/login.js"></script>
     <script src="scripts/jquery-2.2.1.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
     <script src="scripts/parse-1.6.14.js"></script>

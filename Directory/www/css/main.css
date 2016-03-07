@@ -29,6 +29,11 @@
 
 }
 
+#search_div{
+    padding-left:15px;
+    padding-right:15px;
+}
+
 #search{
     font-family:Roboto;
 }

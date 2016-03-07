@@ -126,7 +126,7 @@
     function requestData() {
             var load = document.getElementById("load");
             load.style.visibility = "visible";
-            var query = new Parse.Query(Parse.Object.extend('LXA_AA'));
+            var query = new Parse.Query(Parse.Object.extend(localStorage.db));
             query.ascending("name");
             query.limit(1000);
             query.find({
