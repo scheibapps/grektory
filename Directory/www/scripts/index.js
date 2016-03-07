@@ -16,7 +16,7 @@
 
     function onDeviceReady() {
         Parse.initialize('hehueu8y283yu3hlj14k3h4j1');
-        Parse.serverURL = 'https://greekrectory.herokuapp.com/parse';
+        Parse.serverURL = 'https://grektory.herokuapp.com/parse';
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('button')), false); //default buttons to disabled
