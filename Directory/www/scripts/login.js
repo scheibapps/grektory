@@ -11,6 +11,9 @@
 
     function onDeviceReady() {
         load.style.visibility = "hidden";
+        if (localStorage.keyVal != null) {
+            key.value = localStorage.keyVal;
+        }
         Parse.initialize('hehueu8y283yu3hlj14k3h4j1');
         Parse.serverURL = 'https://grektory.herokuapp.com/parse';
         document.addEventListener('pause', onPause.bind(this), false);
@@ -27,7 +30,9 @@
             success: function (dbs) {
                 if (dbs[0]) {
                     load.style.visibility = "hidden";
-                    localStorage.db = dbs[0].get("val");
+                    localStorage.keyVal = key.value;
+                    localStorage.dbname = dbs[0].get("name");
+                    localStorage.dbval = dbs[0].get("val");
                     window.location = './main.html';
                 } else {
                     load.style.visibility = "hidden";

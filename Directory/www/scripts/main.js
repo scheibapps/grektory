@@ -11,6 +11,7 @@
     var header = document.getElementById('header');
     var footer = document.getElementById('footer');
     var directory = document.getElementById('directory');
+    var title = document.getElementById('title');
     var selected = -1;
     var oldNode;
 
@@ -21,6 +22,7 @@
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('button')), false); //default buttons to disabled
         document.addEventListener('deviceready', setConstraints.bind($('#main')), false);
+        title.textContent = localStorage.dbname;
         requestData();
         $('#search').click(setDisabled);
         $('#call').click(call);
@@ -126,7 +128,7 @@
     function requestData() {
             var load = document.getElementById("load");
             load.style.visibility = "visible";
-            var query = new Parse.Query(Parse.Object.extend(localStorage.db));
+            var query = new Parse.Query(Parse.Object.extend(localStorage.dbval));
             query.ascending("name");
             query.limit(1000);
             query.find({
