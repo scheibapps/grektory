@@ -2,7 +2,7 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady(){
-        //initAd();
+        initAd();
         window.location = './login.html';
     }
 
@@ -24,6 +24,8 @@
                 interstitial: 'ca-app-pub-9006593988246578/3660372645'
             };
         }
+        localStorage.bannerId = admobid.banner;
+        localStorage.interstitialId = admobid.interstitial;
         if (AdMob) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: false });
         }

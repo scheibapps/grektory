@@ -12,9 +12,11 @@
     var menu_dead_space = document.getElementById('menu_dead_space');
     var selected = -1;
     var oldNode;
+    var banner;
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
+        initBanner();
         Parse.initialize('hehueu8y283yu3hlj14k3h4j1');
         Parse.serverURL = 'https://grektory.herokuapp.com/parse';
         document.addEventListener( 'pause', onPause.bind( this ), false );
@@ -32,8 +34,23 @@
         $('#add').click(add);
     };
 
+    function initBanner() {
+        if (AdMob) {
+            banner = AdMob.createBanner({
+                adId: localStorage.bannerId,
+                position: AdMob.AD_POSITION.CUSTOM,
+                x: 0,
+                y: page.offsetHeight-50,
+                autoShow: true,
+                adSize: 'CUSTOM',
+                width: page.offsetWidth,
+                height: 50
+            });
+        }
+    }
+
     function setConstraints() {
-        var height = page.offsetHeight - header.offsetHeight;
+        var height = page.offsetHeight - (header.offsetHeight+50);
         $('#main').attr("style", "height: " + height + "px");
     }
 

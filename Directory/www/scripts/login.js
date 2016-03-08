@@ -10,7 +10,6 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
-        //load.style.visibility = "hidden";
         if (localStorage.keyVal != null) {
             key.value = localStorage.keyVal;
         }
@@ -34,7 +33,7 @@
                     localStorage.keyVal = key.value;
                     localStorage.dbname = dbs[0].get("name");
                     localStorage.dbval = dbs[0].get("val");
-                    //AdMob.showInterstitial();
+                    AdMob.showInterstitial();
                     window.location = './main.html';
                 } else {
                     load.style.visibility = 'hidden';
