@@ -1,19 +1,18 @@
-﻿// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkID=397704
-// To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
-// and then run "window.location.reload()" in the JavaScript Console.
-(function () {
+﻿(function () {
     "use strict";
     var directory_input = new Array();
-    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
     var main = document.getElementById('main');
     var page = document.getElementById('page');
     var header = document.getElementById('header');
     var footer = document.getElementById('footer');
     var directory = document.getElementById('directory');
     var title = document.getElementById('title');
+    var load = document.getElementById('load');
+    var menu_list = document.getElementById('menu_list');
+    var menu_dead_space = document.getElementById('menu_dead_space');
     var selected = -1;
     var oldNode;
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
         Parse.initialize('hehueu8y283yu3hlj14k3h4j1');
@@ -24,16 +23,28 @@
         document.addEventListener('deviceready', setConstraints.bind($('#main')), false);
         title.textContent = localStorage.dbname;
         requestData();
+        $('#menu_dead_space').click(toggleMenu);
         $('#search').click(setDisabled);
         $('#call').click(call);
         $('#text').click(text);
         $('#email').click(email);
         $('#search').click(search);
+        $('#add').click(add);
     };
 
     function setConstraints() {
-        var height = page.offsetHeight - (header.offsetHeight + footer.offsetHeight);
+        var height = page.offsetHeight - header.offsetHeight;
         $('#main').attr("style", "height: " + height + "px");
+    }
+
+    function toggleMenu() {
+        if (menu_list.style.visibility == 'visible') {
+            menu_list.style.visibility = 'hidden';
+            menu_dead_space.style.visibility = 'hidden';
+        } else {
+            menu_list.style.visibility = 'visible';
+            menu_dead_space.style.visibility = 'visible';
+        }
     }
 
     //Enables buttons if table is click
@@ -124,10 +135,48 @@
         window.open('mailto:' + directory_input[selected].email, '_top');
     }
 
+    function add() {
+        function onSuccess(contacts) {
+            if (contacts[0] == null) {
+                newContact();
+            } else {
+                jAlert("this is a test", "with dialog");
+                alert("Contact with this name is already present on your mobile device.");
+            }
+        };
+
+        function onError(contactError) {
+            alert("An error has occurred. Please try again later.");
+        };
+
+        var options = new ContactFindOptions();
+        options.filter = directory_input[selected].name;
+        options.hasPhoneNumber = true;
+        var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+        navigator.contacts.find(fields, onSuccess, onError, options);
+    }
+
+    function newContact() {
+        function onSuccess(contact) {
+            alert("Contact " + directory_input[selected].name + " successfully created.");
+        }
+
+        function onError(contactError) {
+            alert("An error has occurred. Please try again later.");
+        }
+
+        var contact = navigator.contacts.create();
+        contact.displayName = directory_input[selected].name;
+        contact.name = directory_input[selected].name;
+        contact.emails = [new ContactField('emails', directory_input[selected].email, true)];
+        contact.phoneNumbers = [new ContactField('mobile', directory_input[selected].phone, true)];
+        contact.note = "Added via Grektory app";
+        contact.save(onSuccess, onError);
+    }
+
     //REQUESTS SYNCHRONISE DATA FROM XML
     function requestData() {
-            var load = document.getElementById("load");
-            load.style.visibility = "visible";
+            load.style.visibility = 'visible';
             var query = new Parse.Query(Parse.Object.extend(localStorage.dbval));
             query.ascending("name");
             query.limit(1000);
@@ -138,10 +187,9 @@
                         directory_input.push({ name: obj.get("name"), email: obj.get("email"), phone: obj.get("phone"), index: i });
                     }
                     loadTable();
-                    load.style.visibility = "hidden";
+                    load.style.visibility = 'hidden';
                 },
                 error: function (error) {
-                    load.style.visibility = "hidden";
                     alert(error.message);
                 }
             });
