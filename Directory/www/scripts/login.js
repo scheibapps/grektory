@@ -24,7 +24,7 @@
     function queryDBS() {
         load.style.visibility = 'visible'
         var query = new Parse.Query(Parse.Object.extend("DBS"));
-        query.equalTo("public", key.value);
+        query.equalTo("public_key", key.value);
         query.find({
             success: function (dbs) {
                 if (dbs[0]) {
