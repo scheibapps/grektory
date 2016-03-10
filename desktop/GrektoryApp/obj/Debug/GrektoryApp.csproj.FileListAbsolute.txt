@@ -1,0 +1,22 @@
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\bin\Debug\GrektoryApp.exe.config
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\bin\Debug\GrektoryApp.exe
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\bin\Debug\GrektoryApp.pdb
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.Properties.Resources.resources
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.csproj.GenerateResource.Cache
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.exe
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.pdb
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\bin\Debug\Newtonsoft.Json.dll
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
+c:\users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.csprojResolveAssemblyReference.cache
+C:\Users\jscheib2\documents\visual studio 2015\Projects\GrektoryApp\GrektoryApp\obj\Debug\GrektoryApp.Main.resources
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\bin\Debug\GrektoryApp.exe.config
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.exe
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.pdb
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\bin\Debug\GrektoryApp.exe
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\bin\Debug\GrektoryApp.pdb
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.csprojResolveAssemblyReference.cache
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.Main.resources
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.Properties.Resources.resources
+C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.csproj.GenerateResource.Cache
