@@ -10,41 +10,41 @@ namespace GrektoryApp.Objects
 {
     class DB
     {
-        private string name;
-        private string val;
-        private string public_key;
-        private string private_key;
+        private string Name;
+        private string Val;
+        private string Public_key;
+        private string Private_key;
 
         public DB(string name, string val, string public_key, string private_key)
         {
-            this.name = name;
-            this.val = val;
-            this.public_key = public_key;
-            this.private_key = private_key;
+            this.Name = name;
+            this.Val = val;
+            this.Public_key = public_key;
+            this.Private_key = private_key;
         }
 
-        public string Name
+        public string name
         {
-            get { return name; }
-            set { name = value;}
+            get { return Name; }
+            set { Name = value;}
         }
 
-        public string Val
+        public string val
         {
-            get { return val; }
-            set { val = value;}
+            get { return Val; }
+            set { Val = value;}
         }
 
-        public string Public_key
+        public string public_key
         {
-            get { return public_key; }
-            set { public_key = value; }
+            get { return Public_key; }
+            set { Public_key = value; }
         }
 
-        public string Private_key
+        public string private_key
         {
-            get { return private_key; }
-            set { private_key = val; }
+            get { return Private_key; }
+            set { Private_key = value; }
         }
 
         public string toString()

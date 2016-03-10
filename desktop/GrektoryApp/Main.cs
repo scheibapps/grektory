@@ -22,17 +22,20 @@ namespace GrektoryApp
     {
         private List<DB> databases = new List<DB>();
         private DB saveDb;
+        private string title;
 
         public Main()
         {
             InitializeComponent();
-            txtPublic.Text = "0i394j56";
-            txtPrivate.Text = "jn45j6k5";
+            //txtPublic.Text = "0i394j56";
+            //txtPrivate.Text = "jn45j6k5";
             grid.Hide();
         }
 
+        /**BUTTON CLICKS*/
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            btnLoad.Enabled = false;
             progressBar.PerformStep();
             var results = requestJArray("DBS");
             foreach (JObject result in results.Children<JObject>())
@@ -57,6 +60,7 @@ namespace GrektoryApp
             {
                 if (database.validate(txtPublic.Text, txtPrivate.Text)){
                     validate = true;
+                    lblTitle.Text = database.name;
                     progressBar.PerformStep();
                     saveDb = database;
                     loadDatabase(database);
@@ -65,7 +69,17 @@ namespace GrektoryApp
             if (!validate)
             {
                 MessageBox.Show("No directory with public key: "+txtPublic.Text+" and private key: "+txtPrivate.Text+" exists.");
+                btnLoad.Enabled = true;
                 progressBar.Value = 0;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = grid.SelectedRows;
+            for (int i = 0; i < rowCollection.Count; i++)
+            {
+                saveRecord(rowCollection[i]);
             }
         }
 
@@ -74,9 +88,31 @@ namespace GrektoryApp
             saveDatabase();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = grid.SelectedRows;
+            for (int i = 0; i < rowCollection.Count; i++)
+            {
+                deleteRecord(rowCollection[i]);
+            }
+        }
+
+        /**MENU CLICKS*/
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Create create = new Create(this);
+            create.ShowDialog();
+        }
+
+        /**HELPER FUNCTION*/
         private void loadDatabase(DB database)
         {
-            var results = requestJArray(database.Val);
+            var results = requestJArray(database.val);
             foreach (JObject result in results.Children<JObject>())
             {
                 foreach (JProperty data in result.Properties())
@@ -102,7 +138,6 @@ namespace GrektoryApp
             btnSaveAll.Enabled = true;
             btnSave.Enabled = true;
             btnDelete.Enabled = true;
-            btnLoad.Enabled = false;
             grid.Show();
             progressBar.Value = 0;
         }
@@ -130,25 +165,30 @@ namespace GrektoryApp
             Member member = new Member(row.Cells[1].Value as string, row.Cells[3].Value as string, row.Cells[2].Value as string);
             if (row.Cells[0].Value != null)
             {
-                string stream = JsonConvert.SerializeObject(member);
-                Console.Write(stream);
-                byte[] bytes = Encoding.UTF8.GetBytes(stream);
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.Val + "/" + row.Cells[0].Value as string);
-                request.Method = "PUT";
-                request.Headers["X-Parse-Application-Id"] = "hehueu8y283yu3hlj14k3h4j1";
-                request.ContentType = "application/json";
-                request.ContentLength = bytes.Length;
-                Stream dataStream = request.GetRequestStream();
-                dataStream.Write(bytes, 0, bytes.Length);
-                dataStream.Close();
-                request.GetResponse();
-                request.Abort();
+                try {
+                    string stream = JsonConvert.SerializeObject(member);
+                    Console.Write(stream);
+                    byte[] bytes = Encoding.UTF8.GetBytes(stream);
+                    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.val + "/" + row.Cells[0].Value as string);
+                    request.Method = "PUT";
+                    request.Headers["X-Parse-Application-Id"] = "hehueu8y283yu3hlj14k3h4j1";
+                    request.ContentType = "application/json";
+                    request.ContentLength = bytes.Length;
+                    Stream dataStream = request.GetRequestStream();
+                    dataStream.Write(bytes, 0, bytes.Length);
+                    dataStream.Close();
+                    request.GetResponse();
+                    request.Abort();
+                } catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
             }
             else
             {
                 string stream = JsonConvert.SerializeObject(member);
                 byte[] bytes = Encoding.UTF8.GetBytes(stream);
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.Val);
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.val);
                 request.Method = "POST";
                 request.Headers["X-Parse-Application-Id"] = "hehueu8y283yu3hlj14k3h4j1";
                 request.ContentType = "application/json";
@@ -156,7 +196,15 @@ namespace GrektoryApp
                 Stream dataStream = request.GetRequestStream();
                 dataStream.Write(bytes, 0, bytes.Length);
                 dataStream.Close();
-                request.GetResponse();
+                WebResponse response = request.GetResponse();
+                string response_location = response.Headers["Location"].ToString();
+                char[] response_char = response_location.ToCharArray();
+                string objectId = "";
+                for(int i = 0; i < 10; i++)
+                {
+                    objectId += response_char[response_char.Length - (10 - i)];
+                }
+                row.Cells[0].Value = objectId;
                 request.Abort();
             }
         }
@@ -165,14 +213,11 @@ namespace GrektoryApp
         {
             if(row.Cells[0].Value != null)
             {
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.Val + "/" + row.Cells[0].Value as string);
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://grektory.herokuapp.com/parse/classes/" + saveDb.val + "/" + row.Cells[0].Value as string);
+                grid.Rows.Remove(row);
                 request.Method = "DELETE";
                 request.Headers["X-Parse-Application-Id"] = "hehueu8y283yu3hlj14k3h4j1";
                 request.ContentType = "application/json";
-                request.ContentLength = bytes.Length;
-                Stream dataStream = request.GetRequestStream();
-                dataStream.Write(bytes, 0, bytes.Length);
-                dataStream.Close();
                 request.GetResponse();
                 request.Abort();
             }
@@ -193,20 +238,6 @@ namespace GrektoryApp
             var results = JArray.Parse(json); // parse as array
             request.Abort();
             return results;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            DataGridViewSelectedRowCollection rowCollection = grid.SelectedRows;
-            for(int i = 0; i < rowCollection.Count; i++)
-            {
-                saveRecord(rowCollection[i]);
-            }
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -20,3 +20,15 @@ C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.cspro
 C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.Main.resources
 C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.Properties.Resources.resources
 C:\Users\Scheib\Source\Repos\grektoryapp\GrektoryApp\obj\Debug\GrektoryApp.csproj.GenerateResource.Cache
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.exe.config
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.exe
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.pdb
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.csprojResolveAssemblyReference.cache
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Main.resources
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Properties.Resources.resources
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.csproj.GenerateResource.Cache
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.exe
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.pdb
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Create.resources
