@@ -17,6 +17,9 @@
         Parse.serverURL = 'https://grektory.herokuapp.com/parse';
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
+        localStorage.setItem("directory_input_all", new Array()); //force reload of data on login
+        localStorage.setItem("directory_input_active", new Array()); //force reload of data on login
+        localStorage.setItem("directory_input_alumni", new Array()); //force reload of data on login
         $('#url').click(loadUrl);
         $('#login').click(queryDBS);
     };

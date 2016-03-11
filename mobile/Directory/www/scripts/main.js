@@ -1,6 +1,9 @@
 ﻿(function () {
     "use strict";
-    var directory_input = new Array();
+    var directory_input_all;
+    var directory_input_active;
+    var directory_input_alumni;
+    var current_directory = new Array();
     var main = document.getElementById('main');
     var page = document.getElementById('page');
     var header = document.getElementById('header');
@@ -17,6 +20,15 @@
 
     function onDeviceReady() {
         initBanner();
+        try{
+            directory_input_all = JSON.parse(localStorage.getItem("directory_input_all")); //checks for stored data
+            directory_input_active = JSON.parse(localStorage.getItem("directory_input_active")); //checks for stored data
+            directory_input_alumni = JSON.parse(localStorage.getItem("directory_input_alumni")); //checks for stored data
+        } catch (e){
+            directory_input_all = new Array(); //no data, initialize to empty
+            directory_input_active = new Array(); //no data, initialize to empty
+            directory_input_alumni = new Array(); //no data, initialize to empty
+        }
         Parse.initialize('hehueu8y283yu3hlj14k3h4j1');
         Parse.serverURL = 'https://grektory.herokuapp.com/parse';
         document.addEventListener( 'pause', onPause.bind( this ), false );
@@ -25,7 +37,7 @@
         document.addEventListener('deviceready', setConstraints.bind($('#main')), false);
         title.textContent = localStorage.dbname;
         requestData();
-        $('#menu_dead_space').click(toggleMenu);
+        $('#menu').change(onMenuChange);
         $('#search').click(setDisabled);
         $('#call').click(call);
         $('#text').click(text);
@@ -33,6 +45,23 @@
         $('#search').click(search);
         $('#add').click(add);
     };
+
+    function onMenuChange() {
+        var selected = $(this).children(":selected").html();
+        console.log(selected);
+        setCurrentDirectory(selected);
+    }
+
+    function setCurrentDirectory(selected) {
+        if (selected == "ACTIVE") {
+            current_directory = directory_input_active;
+        } else if (selected == "ALUMNI") {
+            current_directory = directory_input_alumni;
+        } else if (selected == "ALL MEMBERS") {
+            current_directory = directory_input_all;
+        }
+        loadTable();
+    }
 
     function initBanner() {
         if (AdMob) {
@@ -52,16 +81,6 @@
     function setConstraints() {
         var height = page.offsetHeight - (header.offsetHeight+50);
         $('#main').attr("style", "height: " + height + "px");
-    }
-
-    function toggleMenu() {
-        if (menu_list.style.visibility == 'visible') {
-            menu_list.style.visibility = 'hidden';
-            menu_dead_space.style.visibility = 'hidden';
-        } else {
-            menu_list.style.visibility = 'visible';
-            menu_dead_space.style.visibility = 'visible';
-        }
     }
 
     //Enables buttons if table is click
@@ -100,14 +119,14 @@
     function filterTable(filter) {
         $('#directory').empty();
         if (filter.length > 0) {
-            for (var i = 0; i < directory_input.length; i++) {
-                if (verifyFilter(directory_input[i].name,filter)) {
+            for (var i = 0; i < current_directory.length; i++) {
+                if (verifyFilter(current_directory[i].name, filter)) {
                     var node = document.createElement("LI");
-                    node.textContent = directory_input[i].name;
-                    node.name = directory_input[i].name;
-                    node.email = directory_input[i].email;
-                    node.phone = directory_input[i].phone;
-                    node.index = directory_input[i].index;
+                    node.textContent = current_directory[i].name;
+                    node.name = current_directory[i].name;
+                    node.email = current_directory[i].email;
+                    node.phone = current_directory[i].phone;
+                    node.index = current_directory[i].index;
                     node.setAttribute("style", "padding-left:25px;");
                     node.addEventListener("click", rowClick.bind(node), false);
                     directory.appendChild(node);
@@ -137,19 +156,19 @@
 
     //CALL FUNCTION
     function call() {
-        window.open('tel:'+directory_input[selected].phone, '_top');
+        window.open('tel:' + current_directory[selected].phone, '_top');
     }
 
     //TEXT FUNCTION
     function text() {
-        localStorage.name = directory_input[selected].name;
-        localStorage.phone = directory_input[selected].phone;
+        localStorage.name = current_directory[selected].name;
+        localStorage.phone = current_directory[selected].phone;
         window.location = './text.html';
     }
 
     //EMAIL FUNCTION
     function email() {
-        window.open('mailto:' + directory_input[selected].email, '_top');
+        window.open('mailto:' + current_directory[selected].email, '_top');
     }
 
     function add() {
@@ -167,7 +186,7 @@
         };
 
         var options = new ContactFindOptions();
-        options.filter = directory_input[selected].name;
+        options.filter = current_directory[selected].name;
         options.hasPhoneNumber = true;
         var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
         navigator.contacts.find(fields, onSuccess, onError, options);
@@ -175,7 +194,7 @@
 
     function newContact() {
         function onSuccess(contact) {
-            alert("Contact " + directory_input[selected].name + " successfully created.");
+            alert("Contact " + current_directory[selected].name + " successfully created.");
         }
 
         function onError(contactError) {
@@ -183,10 +202,10 @@
         }
 
         var contact = navigator.contacts.create();
-        contact.displayName = directory_input[selected].name;
-        contact.name = directory_input[selected].name;
-        contact.emails = [new ContactField('emails', directory_input[selected].email, true)];
-        contact.phoneNumbers = [new ContactField('mobile', directory_input[selected].phone, true)];
+        contact.displayName = current_directory[selected].name;
+        contact.name = current_directory[selected].name;
+        contact.emails = [new ContactField('emails', current_directory[selected].email, true)];
+        contact.phoneNumbers = [new ContactField('mobile', current_directory[selected].phone, true)];
         contact.note = "Added via Grektory app";
         contact.save(onSuccess, onError);
     }
@@ -194,53 +213,42 @@
     //REQUESTS SYNCHRONISE DATA FROM XML
     function requestData() {
             load.style.visibility = 'visible';
-            var query = new Parse.Query(Parse.Object.extend(localStorage.dbval));
-            query.ascending("name");
-            query.limit(1000);
-            query.find({
-                success: function (results) {
-                    for (var i in results) {
-                        var obj = results[i];
-                        directory_input.push({ name: obj.get("name"), email: obj.get("email"), phone: obj.get("phone"), index: i });
-                    }
-                    loadTable();
-                    load.style.visibility = 'hidden';
-                },
-                error: function (error) {
-                    alert(error.message);
-                }
-            });
-        //JSON REQUEST (JQUERY)
-        /*
-        $.getJSON("./json/directory_data.json", function (data) {
-            $.each(data, function (key,val) {
-                directory_input.push({ name: val.member.name, phone: val.member.phone, email: val.member.email, index: 0});
-            });
-            directory_input.sort(function (a, b) {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-                return 0;
-            });
-            for (var i in directory_input) {
-                directory_input[i].index = i;
+            if (directory_input_all.length < 1) {
+                queryDB();
+            } else {
+                setCurrentDirectory($('#menu').children(":selected").html());
+                load.style.visibility = 'hidden';
+                loadTable();
             }
-            loadTable();
+    }
+
+    function queryDB() {
+        console.log("request...");
+        var query = new Parse.Query(Parse.Object.extend(localStorage.dbval));
+        query.ascending("name");
+        query.limit(1000);
+        query.find({
+            success: function (results) {
+                for (var i in results) {
+                    var obj = results[i];
+                    directory_input_all.push({ name: obj.get("name"), email: obj.get("email"), phone: obj.get("phone"), index: directory_input_all.length });
+                    if (obj.get("alumni")) {
+                        directory_input_alumni.push({ name: obj.get("name"), email: obj.get("email"), phone: obj.get("phone"), index: directory_input_alumni.length });
+                    } else {
+                        directory_input_active.push({ name: obj.get("name"), email: obj.get("email"), phone: obj.get("phone"), index: directory_input_active.length });
+                    }
+                }
+                localStorage.setItem("directory_input_all", JSON.stringify(directory_input_all)); //stops requerying
+                localStorage.setItem("directory_input_active", JSON.stringify(directory_input_active)); //stops requerying
+                localStorage.setItem("directory_input_alumni", JSON.stringify(directory_input_alumni)); //stops requerying
+                setCurrentDirectory($('#menu').children(":selected").html());
+                loadTable();
+                load.style.visibility = 'hidden';
+            },
+            error: function (error) {
+                alert(error.message);
+            }
         });
-        */
-        //XML REQUEST
-        /*
-        var request = new XMLHttpRequest();
-        request.open("GET", "./xml/directory.xml", false);
-        request.send();
-        var xml = request.responseXML;
-        var members = xml.getElementsByTagName("member");
-        for (var i = 0; i < members.length; i++) {
-            var member = members[i];
-            var name = member.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-            var phone = member.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
-            directory_input.push({name:name,phone:phone});
-        }
-        */
     }
 
     //ROW CLICK FUNCTION
@@ -259,8 +267,8 @@
     function loadTable() {
         $('#directory').empty();
         var header = '';
-        for (var i = 0; i < directory_input.length; i++) {
-            var new_header = directory_input[i].name.charAt(0);
+        for (var i = 0; i < current_directory.length; i++) {
+            var new_header = current_directory[i].name.charAt(0);
             if (header != new_header) { //Adds alphabetical header to row
                 header = new_header;
                 var head_node = document.createElement("li");
@@ -271,11 +279,11 @@
                 directory.appendChild(head_node);
             }
             var node = document.createElement("li");
-            node.textContent = directory_input[i].name;
-            node.name = directory_input[i].name;
-            node.email = directory_input[i].email;
-            node.phone = directory_input[i].phone;
-            node.index = directory_input[i].index;
+            node.textContent = current_directory[i].name;
+            node.name = current_directory[i].name;
+            node.email = current_directory[i].email;
+            node.phone = current_directory[i].phone;
+            node.index = current_directory[i].index;
             node.setAttribute("style", "padding-left:25px;");
             node.addEventListener("click", rowClick.bind(node), false);
             directory.appendChild(node);
