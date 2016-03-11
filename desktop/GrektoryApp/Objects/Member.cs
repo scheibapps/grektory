@@ -11,12 +11,14 @@ namespace GrektoryApp.Objects
         private string Name;
         private string Phone;
         private string Email;
+        private Boolean Alumni;
 
-        public Member(string name, string phone, string email)
+        public Member(string name, string phone, string email, Boolean alumni)
         {
             this.Name = name;
             this.Phone = phone;
             this.Email = email;
+            this.Alumni = alumni;
         }
 
         public string name
@@ -35,6 +37,12 @@ namespace GrektoryApp.Objects
         {
             get { return Email; }
             set { Email = value; }
+        }
+
+        public Boolean alumni
+        {
+            get { return Alumni; }
+            set { Alumni = value; }
         }
     }
 }

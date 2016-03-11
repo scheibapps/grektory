@@ -32,3 +32,4 @@ C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryAp
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Create.resources
+C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Import.resources

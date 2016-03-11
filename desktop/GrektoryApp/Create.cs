@@ -31,7 +31,7 @@ namespace GrektoryApp
             if (txtDBName.Text.Length > 0 && r.IsMatch(txtDBName.Text))
             {
                 string[] keys = generateKey(new Random());
-                db = new DB(txtDBName.Text, keys[0], keys[1], keys[2]);
+                db = new DB(txtDBName.Text, "DB_"+keys[0], keys[1], keys[2]);
                 txtPublic.Text = keys[1];
                 txtPrivate.Text = keys[2];
                 Console.WriteLine(db.private_key);

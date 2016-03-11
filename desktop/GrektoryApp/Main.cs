@@ -27,15 +27,13 @@ namespace GrektoryApp
         public Main()
         {
             InitializeComponent();
-            //txtPublic.Text = "0i394j56";
-            //txtPrivate.Text = "jn45j6k5";
             grid.Hide();
         }
 
         /**BUTTON CLICKS*/
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            btnLoad.Enabled = false;
+            grid.Rows.Clear();
             progressBar.PerformStep();
             var results = requestJArray("DBS");
             foreach (JObject result in results.Children<JObject>())
@@ -64,6 +62,7 @@ namespace GrektoryApp
                     progressBar.PerformStep();
                     saveDb = database;
                     loadDatabase(database);
+                    break;
                 }
             }
             if (!validate)
@@ -124,12 +123,20 @@ namespace GrektoryApp
                         string name = member.name;
                         string phone = member.phone;
                         string email = member.email;
+                        bool alumni;
+                        try
+                        {
+                            alumni = Convert.ToBoolean(member.alumni);
+                        } catch (Exception e)
+                        {
+                            alumni = false;
+                        }
                         int index = grid.Rows.Add();
                         grid.Rows[index].Cells[0].Value = id;
                         grid.Rows[index].Cells[1].Value = name;
                         grid.Rows[index].Cells[2].Value = email;
                         grid.Rows[index].Cells[3].Value = phone;
-                        grid.Rows[index].Cells[4].Value = false;
+                        grid.Rows[index].Cells[4].Value = alumni;
                         progressBar.PerformStep();
                     }
                 }
@@ -138,6 +145,11 @@ namespace GrektoryApp
             btnSaveAll.Enabled = true;
             btnSave.Enabled = true;
             btnDelete.Enabled = true;
+            importToolStripMenuItem.Enabled = true;
+            exportToolStripMenuItem.Enabled = true;
+            createToolStripMenuItem.Enabled = false;
+            txtPublic.Enabled = false;
+            txtPrivate.Enabled = false;
             grid.Show();
             progressBar.Value = 0;
         }
@@ -162,7 +174,7 @@ namespace GrektoryApp
 
         private void saveRecord(DataGridViewRow row)
         {
-            Member member = new Member(row.Cells[1].Value as string, row.Cells[3].Value as string, row.Cells[2].Value as string);
+            Member member = new Member(row.Cells[1].Value as string, row.Cells[3].Value as string, row.Cells[2].Value as string, Convert.ToBoolean(row.Cells[4].Value));
             if (row.Cells[0].Value != null)
             {
                 try {
@@ -238,6 +250,25 @@ namespace GrektoryApp
             var results = JArray.Parse(json); // parse as array
             request.Abort();
             return results;
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "(*.csv)|*csv";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream = dialog.OpenFile();
+                StreamReader streamReader = new StreamReader(stream);
+                List<string> lines = new List<string>();
+                string line;
+                while((line = streamReader.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+                Import import = new Import(this,lines);
+                import.ShowDialog();
+            }
         }
     }
 }

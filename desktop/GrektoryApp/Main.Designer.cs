@@ -36,11 +36,6 @@
             this.txtPrivate = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.grid = new System.Windows.Forms.DataGridView();
-            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alumni = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSaveAll = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnSave = new System.Windows.Forms.Button();
@@ -52,6 +47,11 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             this.picBox = new System.Windows.Forms.PictureBox();
+            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alumni = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -107,40 +107,6 @@
             this.grid.Name = "grid";
             this.grid.RowTemplate.Height = 24;
             // 
-            // _id
-            // 
-            resources.ApplyResources(this._id, "_id");
-            this._id.Name = "_id";
-            this._id.ReadOnly = true;
-            this._id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // name
-            // 
-            resources.ApplyResources(this.name, "name");
-            this.name.MaxInputLength = 40;
-            this.name.Name = "name";
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // email
-            // 
-            resources.ApplyResources(this.email, "email");
-            this.email.MaxInputLength = 40;
-            this.email.Name = "email";
-            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // phone
-            // 
-            resources.ApplyResources(this.phone, "phone");
-            this.phone.MaxInputLength = 40;
-            this.phone.Name = "phone";
-            this.phone.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // alumni
-            // 
-            resources.ApplyResources(this.alumni, "alumni");
-            this.alumni.Name = "alumni";
-            this.alumni.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // btnSaveAll
             // 
             resources.ApplyResources(this.btnSaveAll, "btnSaveAll");
@@ -187,13 +153,14 @@
             // 
             // importToolStripMenuItem
             // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             // 
             // exitToolStripMenuItem
             // 
@@ -214,6 +181,42 @@
             resources.ApplyResources(this.picBox, "picBox");
             this.picBox.Name = "picBox";
             this.picBox.TabStop = false;
+            // 
+            // _id
+            // 
+            resources.ApplyResources(this._id, "_id");
+            this._id.Name = "_id";
+            this._id.ReadOnly = true;
+            this._id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // name
+            // 
+            resources.ApplyResources(this.name, "name");
+            this.name.MaxInputLength = 40;
+            this.name.Name = "name";
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // email
+            // 
+            resources.ApplyResources(this.email, "email");
+            this.email.MaxInputLength = 40;
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // phone
+            // 
+            resources.ApplyResources(this.phone, "phone");
+            this.phone.MaxInputLength = 40;
+            this.phone.Name = "phone";
+            this.phone.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // alumni
+            // 
+            this.alumni.FalseValue = "FALSE";
+            resources.ApplyResources(this.alumni, "alumni");
+            this.alumni.Name = "alumni";
+            this.alumni.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.alumni.TrueValue = "TRUE";
             // 
             // Main
             // 
@@ -251,7 +254,6 @@
         private System.Windows.Forms.Label lblPublic;
         private System.Windows.Forms.Label lblPrivate;
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnSaveAll;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button btnSave;
@@ -263,13 +265,14 @@
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.TextBox txtPublic;
+        public System.Windows.Forms.TextBox txtPrivate;
+        public System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn _id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewCheckBoxColumn alumni;
-        public System.Windows.Forms.TextBox txtPublic;
-        public System.Windows.Forms.TextBox txtPrivate;
     }
 }
 
