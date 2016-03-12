@@ -33,3 +33,16 @@ C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Create.resources
 C:\Users\jscheib2\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Import.resources
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.exe.config
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.exe
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.pdb
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.exe
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\GrektoryApp.pdb
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.csprojResolveAssemblyReference.cache
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Create.resources
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Import.resources
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Main.resources
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.Properties.Resources.resources
+C:\Users\Jacob Scheib\Source\Repos\grektory\desktop\GrektoryApp\obj\Debug\GrektoryApp.csproj.GenerateResource.Cache

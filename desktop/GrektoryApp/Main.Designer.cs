@@ -36,6 +36,11 @@
             this.txtPrivate = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.grid = new System.Windows.Forms.DataGridView();
+            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alumni = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSaveAll = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnSave = new System.Windows.Forms.Button();
@@ -47,11 +52,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.Button();
             this.picBox = new System.Windows.Forms.PictureBox();
-            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alumni = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -107,81 +108,6 @@
             this.grid.Name = "grid";
             this.grid.RowTemplate.Height = 24;
             // 
-            // btnSaveAll
-            // 
-            resources.ApplyResources(this.btnSaveAll, "btnSaveAll");
-            this.btnSaveAll.Name = "btnSaveAll";
-            this.btnSaveAll.UseVisualStyleBackColor = true;
-            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
-            // 
-            // progressBar
-            // 
-            resources.ApplyResources(this.progressBar, "progressBar");
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Step = 25;
-            // 
-            // btnSave
-            // 
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.Name = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actionToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
-            // 
-            // actionToolStripMenuItem
-            // 
-            this.actionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
-            this.importToolStripMenuItem,
-            this.exportToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
-            resources.ApplyResources(this.actionToolStripMenuItem, "actionToolStripMenuItem");
-            // 
-            // createToolStripMenuItem
-            // 
-            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
-            // 
-            // importToolStripMenuItem
-            // 
-            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // btnDelete
-            // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // picBox
-            // 
-            this.picBox.BackgroundImage = global::GrektoryApp.Properties.Resources.icon;
-            resources.ApplyResources(this.picBox, "picBox");
-            this.picBox.Name = "picBox";
-            this.picBox.TabStop = false;
-            // 
             // _id
             // 
             resources.ApplyResources(this._id, "_id");
@@ -217,6 +143,89 @@
             this.alumni.Name = "alumni";
             this.alumni.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.alumni.TrueValue = "TRUE";
+            // 
+            // btnSaveAll
+            // 
+            resources.ApplyResources(this.btnSaveAll, "btnSaveAll");
+            this.btnSaveAll.Name = "btnSaveAll";
+            this.btnSaveAll.UseVisualStyleBackColor = true;
+            this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
+            // 
+            // progressBar
+            // 
+            resources.ApplyResources(this.progressBar, "progressBar");
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Step = 25;
+            // 
+            // btnSave
+            // 
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actionToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // actionToolStripMenuItem
+            // 
+            this.actionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.restoreToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
+            resources.ApplyResources(this.actionToolStripMenuItem, "actionToolStripMenuItem");
+            // 
+            // createToolStripMenuItem
+            // 
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            resources.ApplyResources(this.createToolStripMenuItem, "createToolStripMenuItem");
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            // 
+            // importToolStripMenuItem
+            // 
+            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // btnDelete
+            // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // picBox
+            // 
+            this.picBox.BackgroundImage = global::GrektoryApp.Properties.Resources.icon;
+            resources.ApplyResources(this.picBox, "picBox");
+            this.picBox.Name = "picBox";
+            this.picBox.TabStop = false;
+            // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            resources.ApplyResources(this.restoreToolStripMenuItem, "restoreToolStripMenuItem");
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -273,6 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewCheckBoxColumn alumni;
+        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
     }
 }
 

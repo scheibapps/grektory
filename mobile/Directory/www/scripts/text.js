@@ -14,7 +14,6 @@
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('#send')), false);
-        AdMob.removeBanner();
         setConstraints();
         $('#message').click(setEnabled);
         $('#send').click(send);

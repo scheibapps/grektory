@@ -130,10 +130,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 33</value>
+    <value>7, 27</value>
+  </data>
+  <data name="lblTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 40</value>
+    <value>148, 32</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -157,16 +160,16 @@
     <value>11</value>
   </data>
   <data name="txtPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 103</value>
+    <value>13, 84</value>
   </data>
   <data name="txtPublic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="txtPublic.MaxLength" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="txtPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>135, 20</value>
   </data>
   <data name="txtPublic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -193,10 +196,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 79</value>
+    <value>11, 64</value>
+  </data>
+  <data name="lblPublic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lblPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 25</value>
+    <value>103, 18</value>
   </data>
   <data name="lblPublic.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -226,10 +232,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblPrivate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 130</value>
+    <value>11, 106</value>
+  </data>
+  <data name="lblPrivate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lblPrivate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 25</value>
+    <value>115, 18</value>
   </data>
   <data name="lblPrivate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -250,16 +259,16 @@
     <value>8</value>
   </data>
   <data name="txtPrivate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 155</value>
+    <value>14, 126</value>
   </data>
   <data name="txtPrivate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="txtPrivate.MaxLength" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="txtPrivate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>135, 20</value>
   </data>
   <data name="txtPrivate.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -283,13 +292,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 155</value>
+    <value>154, 126</value>
   </data>
   <data name="btnLoad.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 25</value>
+    <value>90, 20</value>
   </data>
   <data name="btnLoad.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -308,6 +317,45 @@
   </data>
   <data name="&gt;&gt;btnLoad.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <metadata name="_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="phone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="alumni.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="grid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 150</value>
+  </data>
+  <data name="grid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="grid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>627, 295</value>
+  </data>
+  <data name="grid.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;grid.Name" xml:space="preserve">
+    <value>grid</value>
+  </data>
+  <data name="&gt;&gt;grid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grid.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -354,30 +402,6 @@
   <data name="alumni.Width" type="System.Int32, mscorlib">
     <value>93</value>
   </data>
-  <data name="grid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 185</value>
-  </data>
-  <data name="grid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="grid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>836, 363</value>
-  </data>
-  <data name="grid.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;grid.Name" xml:space="preserve">
-    <value>grid</value>
-  </data>
-  <data name="&gt;&gt;grid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grid.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grid.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="btnSaveAll.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -388,13 +412,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnSaveAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 155</value>
+    <value>342, 126</value>
   </data>
   <data name="btnSaveAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnSaveAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 25</value>
+    <value>90, 20</value>
   </data>
   <data name="btnSaveAll.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -418,13 +442,13 @@
     <value>NoControl</value>
   </data>
   <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 553</value>
+    <value>13, 449</value>
   </data>
   <data name="progressBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>836, 23</value>
+    <value>627, 19</value>
   </data>
   <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -451,13 +475,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 155</value>
+    <value>248, 126</value>
   </data>
   <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 25</value>
+    <value>90, 20</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -480,14 +504,53 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="createToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="importToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="exportToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="exportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="restoreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="restoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="actionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="actionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 2, 0, 2</value>
-  </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>866, 28</value>
+    <value>650, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -507,42 +570,6 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="actionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
-  </data>
-  <data name="actionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Action</value>
-  </data>
-  <data name="createToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 26</value>
-  </data>
-  <data name="createToolStripMenuItem.Text" xml:space="preserve">
-    <value>Create</value>
-  </data>
-  <data name="importToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="importToolStripMenuItem.Text" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="exportToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="exportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 26</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="btnDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -553,13 +580,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 155</value>
+    <value>436, 126</value>
   </data>
   <data name="btnDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 25</value>
+    <value>90, 20</value>
   </data>
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -586,13 +613,10 @@
     <value>NoControl</value>
   </data>
   <data name="picBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>708, 35</value>
-  </data>
-  <data name="picBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>531, 28</value>
   </data>
   <data name="picBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 145</value>
+    <value>109, 118</value>
   </data>
   <data name="picBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -613,16 +637,43 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>866, 590</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>650, 479</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;_id.Name" xml:space="preserve">
+    <value>_id</value>
+  </data>
+  <data name="&gt;&gt;_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;name.Name" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="&gt;&gt;name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;email.Name" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="&gt;&gt;email.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;phone.Name" xml:space="preserve">
+    <value>phone</value>
+  </data>
+  <data name="&gt;&gt;phone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alumni.Name" xml:space="preserve">
+    <value>alumni</value>
+  </data>
+  <data name="&gt;&gt;alumni.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;actionToolStripMenuItem.Name" xml:space="preserve">
     <value>actionToolStripMenuItem</value>
@@ -654,35 +705,11 @@
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_id.Name" xml:space="preserve">
-    <value>_id</value>
+  <data name="&gt;&gt;restoreToolStripMenuItem.Name" xml:space="preserve">
+    <value>restoreToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;_id.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;name.Name" xml:space="preserve">
-    <value>name</value>
-  </data>
-  <data name="&gt;&gt;name.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;email.Name" xml:space="preserve">
-    <value>email</value>
-  </data>
-  <data name="&gt;&gt;email.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;phone.Name" xml:space="preserve">
-    <value>phone</value>
-  </data>
-  <data name="&gt;&gt;phone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alumni.Name" xml:space="preserve">
-    <value>alumni</value>
-  </data>
-  <data name="&gt;&gt;alumni.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;restoreToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

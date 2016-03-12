@@ -79,7 +79,7 @@
     }
 
     function setConstraints() {
-        var height = page.offsetHeight - (header.offsetHeight+50);
+        var height = page.offsetHeight - (header.offsetHeight);
         $('#main').attr("style", "height: " + height + "px");
     }
 

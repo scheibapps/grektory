@@ -7,6 +7,7 @@
     height:100%;
     width:100%;
     position:absolute;
+    overflow:hidden;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 #menu-div{
-    position:absolute;
+    position:fixed;
     top:0px;
     left:15px;
 }
@@ -92,6 +93,7 @@
    width:100%;
    padding:0px;
    margin:0px;
+   position:fixed;
    overflow-y:scroll;
    -webkit-overflow-scrolling:touch;
    background-color: rgba(0, 51, 0, .2);
