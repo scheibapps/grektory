@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html id="html">
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://grektory.herokuapp.com http://i.imgur.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <title>Grektory</title>
+    <!-- Directory references -->
+    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-role="page" id="page">
+        <div id="load"></div>
+        <div data-role="header" class="header" id="header">
+            <h1 id="title">GREKTORY</h1>
+            <img id="header-img" src="http://i.imgur.com/0HOe6UO.png" />
+        </div>
+        <div role="main" id="main" class="ui-content" align="center">
+            <div id="form">
+                <input id="key" maxlength="8" placeholder="<directory public key>" />
+                <button id="login">LOGIN</button>
+                <h3>OR</h3>
+                <button id="url">CREATE DIRECTORY</button>
+            </div>
+        </div>
+        <div data-role="footer" class="footer" id="footer">
+            
+        </div>
+    </div>
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/jquery-2.2.1.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/parse-1.6.14.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Black.ttf');
+}
+
+#page{
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+#header{
+    height:auto;
+    width: 100%;
+    font-family:Roboto;
+    color: white;
+    background: rgb(0, 0, 0);
+    padding:2px;
+}
+
+#main{
+   width:100%;
+   margin:0px;
+   padding:0px;
+   margin:0px;
+   overflow:hidden;
+   background-color: rgba(0, 51, 0, .2);
+}
+
+#message{
+    height:100%;
+    width:100%;
+    font-family:Roboto;
+}
+
+#footer{
+    height:auto;
+    width:100%;
+    font-family:Roboto;
+}
+
+#button-table{
+    width:100%;
+    margin:0px;
+    padding:0px;
+    background-color: rgba(0, 51, 0,0.2);
+}
+
+#cancel{
+    width:100%;
+    font-family:Roboto;
+    margin:0px;
+    color:white;
+    background: rgb(0, 0, 0);
+}
+
+#send{
+    width:100%;
+    font-family:Roboto;
+    margin:0px;
+    color:white;
+    background: rgb(0, 0, 0);
+}
+
