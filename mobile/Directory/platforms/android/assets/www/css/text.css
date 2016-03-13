@@ -6,7 +6,9 @@
 #page{
     height:100%;
     width:100%;
-    position:absolute;
+    display:flex;
+    position:page;
+    flex-flow:column;
 }
 
 #header{
@@ -16,6 +18,7 @@
     color: white;
     background: rgb(0, 0, 0);
     padding:2px;
+    flex: 0 1 auto;
 }
 
 #main{
@@ -23,7 +26,7 @@
    margin:0px;
    padding:0px;
    margin:0px;
-   overflow:hidden;
+   flex: 1 1 auto;
    background-color: rgba(0, 51, 0, .2);
 }
 
@@ -33,32 +36,18 @@
     font-family:Roboto;
 }
 
-#footer{
-    height:auto;
+#menu_list{
     width:100%;
-    font-family:Roboto;
+    height:10%;
+    background-color:rgb(0,0,0);
+    z-index:9999;
 }
 
-#button-table{
-    width:100%;
-    margin:0px;
-    padding:0px;
-    background-color: rgba(0, 51, 0,0.2);
-}
-
-#cancel{
-    width:100%;
+#send,#cancel{
+    width:42%;
     font-family:Roboto;
-    margin:0px;
+    text-align:left;
     color:white;
-    background: rgb(0, 0, 0);
-}
-
-#send{
-    width:100%;
-    font-family:Roboto;
-    margin:0px;
-    color:white;
-    background: rgb(0, 0, 0);
+    background-color:rgb(0,0,0);
 }
 

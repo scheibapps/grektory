@@ -3,7 +3,6 @@
     var main = document.getElementById('main');
     var page = document.getElementById('page');
     var header = document.getElementById('header');
-    var footer = document.getElementById('footer');
     var name = document.getElementById('name');
     var number = document.getElementById('number');
     var message = document.getElementById('message');
@@ -22,8 +21,8 @@
     };
 
     function setConstraints(){
-        var height = page.offsetHeight - (header.offsetHeight + footer.offsetHeight);
-        $('#main').attr("style", "height: " + height + "px");
+        //var height = page.offsetHeight - header.offsetHeight;
+        //$('#main').attr("style", "height: " + height + "px");
     }
 
     function setEnabled() {
@@ -75,7 +74,7 @@
 
     function setHeader() {
         name.innerHTML = nameVal = localStorage.name;
-        number.innerHTML = phoneVal = localStorage.phone;
+        //number.innerHTML = phoneVal = localStorage.phone;
     }
 
     function onPause() {

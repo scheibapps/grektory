@@ -93,6 +93,14 @@ module.exports = [
         "id": "cordova-plugin-whitelist.whitelist",
         "pluginId": "cordova-plugin-whitelist",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -102,7 +110,8 @@ module.exports.metadata =
     "cordova-plugin-extension": "1.2.9",
     "cordova-plugin-admobpro": "2.12.1",
     "cordova-plugin-contacts": "2.0.1",
-    "cordova-plugin-whitelist": "1.2.1"
+    "cordova-plugin-whitelist": "1.2.1",
+    "cordova-plugin-statusbar": "2.1.2"
 }
 // BOTTOM OF METADATA
 });

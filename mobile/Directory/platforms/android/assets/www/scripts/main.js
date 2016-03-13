@@ -19,7 +19,6 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
-        initBanner();
         try{
             directory_input_all = JSON.parse(localStorage.getItem("directory_input_all")); //checks for stored data
             directory_input_active = JSON.parse(localStorage.getItem("directory_input_active")); //checks for stored data
@@ -34,7 +33,6 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('button')), false); //default buttons to disabled
-        document.addEventListener('deviceready', setConstraints.bind($('#main')), false);
         title.textContent = localStorage.dbname;
         requestData();
         $('#menu').change(onMenuChange);
@@ -61,26 +59,6 @@
             current_directory = directory_input_all;
         }
         loadTable();
-    }
-
-    function initBanner() {
-        if (AdMob) {
-            banner = AdMob.createBanner({
-                adId: localStorage.bannerId,
-                position: AdMob.AD_POSITION.CUSTOM,
-                x: 0,
-                y: page.offsetHeight-50,
-                autoShow: true,
-                adSize: 'CUSTOM',
-                width: page.offsetWidth,
-                height: 50
-            });
-        }
-    }
-
-    function setConstraints() {
-        var height = page.offsetHeight - (header.offsetHeight);
-        $('#main').attr("style", "height: " + height + "px");
     }
 
     //Enables buttons if table is click
@@ -112,7 +90,6 @@
                 filterTable(elem.val());
             }
         });
-        setConstraints();
     }
 
     //FILTERS TABLE, USED BY SEARCHBAR

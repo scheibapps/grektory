@@ -114,6 +114,7 @@
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-maxSdkVersion" value="23" />
   <preference name="android-targetSdkVersion" value="23" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
   <plugin name="com.cordova.plugins.sms" version="0.1.8" />
   <plugin name="cordova-plugin-contacts" version="2.0.1" />
   <plugin name="cordova-plugin-admobpro" version="2.12.1" />

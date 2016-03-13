@@ -15,21 +15,15 @@
 </head>
 <body>
     <div data-role="page" id="page" style="height:inherit">
-        <div data-role="header" class="header" id="header">
-            <h1 id="name">NAME</h1>
-            <h2 id="number">NUMBER</h2>
+        <div data-role="header" class="header" id="header" align="center">
+            <h2 id="name">NAME</h2>
+            <div id="menu_list" align="center">
+                <button id="cancel" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext">CANCEL</button>
+                <button id="send" class="ui-btn ui-icon-forward ui-btn-icon-notext">SEND</button>
+            </div>
         </div>
         <div role="main" id="main" class="ui-content">
             <textarea id="message" contenteditable="true" placeholder="Message..."></textarea>
-        </div>
-        <div data-role="footer" class="footer" id="footer">
-            <table id="button-table">
-                <tr>
-                    <td><button id="cancel">CANCEL</button></td>
-                    <td><button id="send">SEND</button></td>
-                </tr>
-            </table>
-            
         </div>
     </div>
     <!-- Cordova reference, this is added to your app when it's built. -->

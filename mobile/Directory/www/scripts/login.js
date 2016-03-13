@@ -51,7 +51,7 @@
     }
 
     function loadUrl() {
-        window.open('https://scheibapps.herokuapp.com/Grektory/Add');
+        window.open('https://scheibapps.herokuapp.com/');
     }
 
     function onPause() {

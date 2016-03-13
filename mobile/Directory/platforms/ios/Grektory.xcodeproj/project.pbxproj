@@ -63,6 +63,7 @@
 		4EC56C01A3CE44B0B04B6933 /* CDVContact.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8C939240A2474FB26D53FC /* CDVContact.m */; };
 		62250DEFD73D4FFB81FCF21B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABD0450BBB5448CA45C3B44 /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D148334CA5A04FE28953C72B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F81A80553BC41F8AC511C0E /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C58750252E794CA7A50B4386 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F96923DEE72949A5991F298C /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,8 @@
 		13EE5F28D7B5497992CB2C3E /* CDVContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVContact.h"; path = "cordova-plugin-contacts/CDVContact.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		DABD0450BBB5448CA45C3B44 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		3F81A80553BC41F8AC511C0E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AddressBookUI.framework"; path = "System/Library/Frameworks/AddressBookUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		F96923DEE72949A5991F298C /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		ADDEFA58C78F446594145816 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,8 @@
 				EB8C939240A2474FB26D53FC /* CDVContact.m */,
 				C2B351414B7F4429BD5C8D09 /* CDVContacts.h */,
 				13EE5F28D7B5497992CB2C3E /* CDVContact.h */,
+				F96923DEE72949A5991F298C /* CDVStatusBar.m */,
+				ADDEFA58C78F446594145816 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "Grektory/Plugins";
@@ -498,6 +503,7 @@
 				BC0513339D2B4118A70C0592 /* AdMobMediation.m in Sources */,
 				7DD40DFDE46A4BE192748BD9 /* CDVContacts.m in Sources */,
 				4EC56C01A3CE44B0B04B6933 /* CDVContact.m in Sources */,
+				C58750252E794CA7A50B4386 /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

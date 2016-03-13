@@ -3,7 +3,6 @@
     var main = document.getElementById('main');
     var page = document.getElementById('page');
     var header = document.getElementById('header');
-    var footer = document.getElementById('footer');
     var name = document.getElementById('name');
     var number = document.getElementById('number');
     var message = document.getElementById('message');
@@ -14,17 +13,11 @@
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('#send')), false);
-        setConstraints();
         $('#message').click(setEnabled);
         $('#send').click(send);
         $('#cancel').click(cancel);
         setHeader();
     };
-
-    function setConstraints(){
-        var height = page.offsetHeight - (header.offsetHeight + footer.offsetHeight);
-        $('#main').attr("style", "height: " + height + "px");
-    }
 
     function setEnabled() {
         var elem = $(this);
@@ -75,7 +68,7 @@
 
     function setHeader() {
         name.innerHTML = nameVal = localStorage.name;
-        number.innerHTML = phoneVal = localStorage.phone;
+        //number.innerHTML = phoneVal = localStorage.phone;
     }
 
     function onPause() {

@@ -3,6 +3,7 @@
 
     function onDeviceReady(){
         initAd();
+        StatusBar.hide();
         window.location = './login.html';
     }
 
@@ -28,6 +29,18 @@
         localStorage.interstitialId = admobid.interstitial;
         if (AdMob) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: false });
+        }
+        initBanner();
+    }
+
+    function initBanner() {
+        if (AdMob) {
+            banner = AdMob.createBanner({
+                adId: localStorage.bannerId,
+                position: AdMob.AD_POSITION.BOTTOM_CENTER,
+                autoShow: true,
+                adSize: 'SMART_BANNER',
+            });
         }
     }
 })();

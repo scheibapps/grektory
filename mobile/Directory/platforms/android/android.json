@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -89,6 +93,9 @@
             "PACKAGE_NAME": "io.cordova.myappc08e44"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myappc08e44"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "io.cordova.myappc08e44"
         }
     },
@@ -187,6 +194,14 @@
             "id": "cordova-plugin-whitelist.whitelist",
             "pluginId": "cordova-plugin-whitelist",
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -194,6 +209,7 @@
         "cordova-plugin-extension": "1.2.9",
         "cordova-plugin-admobpro": "2.12.1",
         "cordova-plugin-contacts": "2.0.1",
-        "cordova-plugin-whitelist": "1.2.1"
+        "cordova-plugin-whitelist": "1.2.1",
+        "cordova-plugin-statusbar": "2.1.2"
     }
 }

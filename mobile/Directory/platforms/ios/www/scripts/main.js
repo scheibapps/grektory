@@ -19,7 +19,6 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
-        initBanner();
         try{
             directory_input_all = JSON.parse(localStorage.getItem("directory_input_all")); //checks for stored data
             directory_input_active = JSON.parse(localStorage.getItem("directory_input_active")); //checks for stored data
@@ -61,21 +60,6 @@
             current_directory = directory_input_all;
         }
         loadTable();
-    }
-
-    function initBanner() {
-        if (AdMob) {
-            banner = AdMob.createBanner({
-                adId: localStorage.bannerId,
-                position: AdMob.AD_POSITION.CUSTOM,
-                x: 0,
-                y: page.offsetHeight-50,
-                autoShow: true,
-                adSize: 'CUSTOM',
-                width: page.offsetWidth,
-                height: 50
-            });
-        }
     }
 
     function setConstraints() {
