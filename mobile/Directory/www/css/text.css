@@ -3,12 +3,9 @@
     src: url('../fonts/Roboto-Black.ttf');
 }
 
-#page{
+html,body{
     height:100%;
     width:100%;
-    display:flex;
-    position:page;
-    flex-flow:column;
 }
 
 #header{
@@ -17,22 +14,27 @@
     font-family:Roboto;
     color: white;
     background: rgb(0, 0, 0);
-    padding:2px;
-    flex: 0 1 auto;
+    text-align:center;
+}
+
+#title{
+    width:100%;
+}
+
+#name{
+    width:100%;
 }
 
 #main{
+   height:auto;
    width:100%;
+   padding-left:6%;
+   padding-right:6%;
    margin:0px;
-   padding:0px;
-   margin:0px;
-   flex: 1 1 auto;
-   background-color: rgba(0, 51, 0, .2);
 }
 
 #message{
-    height:100%;
-    width:100%;
+    width:88%;
     font-family:Roboto;
 }
 
@@ -40,13 +42,11 @@
     width:100%;
     height:10%;
     background-color:rgb(0,0,0);
-    z-index:9999;
 }
 
 #send,#cancel{
     width:42%;
     font-family:Roboto;
-    text-align:left;
     color:white;
     background-color:rgb(0,0,0);
 }

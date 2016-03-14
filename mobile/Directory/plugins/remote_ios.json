@@ -19,10 +19,10 @@
         "cordova-plugin-extension": {
             "PACKAGE_NAME": "io.cordova.myappc08e44"
         },
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "io.cordova.myappc08e44"
         },
-        "cordova-plugin-statusbar": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myappc08e44"
         }
     },

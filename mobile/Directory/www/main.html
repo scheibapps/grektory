@@ -9,32 +9,28 @@
     <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div data-role="page" id="page">
-        <div id="load"></div>
-        <div id="menu_dead_space"></div>
-        <div data-role="header" class="header" id="header" align="center">
-            <div align="left" id="menu-div">
-                <select id="menu" data-iconpos="notext">
-                    <option class="menu-option" id="all">ALL MEMBERS</option>
-                    <option class="menu-option" id="active">ACTIVE</option>
-                    <option class="menu-option" id="alumni">ALUMNI</option>
-                </select>  
-            </div>    
-            <h1 id="title">Directory</h1>
-            <div id="search_div">
-                <input type="text" placeholder="Search..." id="search" maxlength="50"/>
-            </div>
-            <div id="menu_list">
-                <button id="call" class="ui-btn ui-icon-phone ui-btn-icon-notext">CALL</button>
-                <button id="text" class="ui-btn ui-icon-comment ui-btn-icon-notext">TEXT</button>
-                <button id="email" class="ui-btn ui-icon-mail ui-btn-icon-notext">EMAIL</button>
-                <button id="add" class="ui-btn ui-icon-plus ui-btn-icon-notext">ADD</button>
-            </div>
+    <div id="load"></div>
+    <div data-role="header" class="header" id="header" align="center" data-position="fixed" data-tap-toggle="false">
+        <div align="left" id="menu-div">
+            <select id="menu" data-iconpos="notext">
+                <option class="menu-option" id="all">ALL MEMBERS</option>
+                <option class="menu-option" id="active">ACTIVE</option>
+                <option class="menu-option" id="alumni">ALUMNI</option>
+            </select>
         </div>
-        <div data-role="content" role="main" id="main" class="ui-content">
-            <ul id="directory" data-role="listview">
-            </ul>
+        <h1 id="title">Directory</h1>
+        <div id="search_div">
+            <input type="text" placeholder="Search..." id="search" maxlength="50" />
         </div>
+        <div id="menu_list">
+            <button id="call" class="ui-btn ui-icon-phone ui-btn-icon-notext">CALL</button>
+            <button id="text" class="ui-btn ui-icon-comment ui-btn-icon-notext">TEXT</button>
+            <button id="email" class="ui-btn ui-icon-mail ui-btn-icon-notext">EMAIL</button>
+            <button id="add" class="ui-btn ui-icon-plus ui-btn-icon-notext">ADD</button>
+        </div>
+    </div>
+    <div id="content" class="ui-content">
+        <ul id="directory" data-role="listview" class="ui-listview"></ul>
     </div>
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>

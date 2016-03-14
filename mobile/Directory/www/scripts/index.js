@@ -32,12 +32,14 @@
         if (AdMob) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: false });
         }
-        initBanner();
+        if (!(/(ipod|iphone|ipad)/i.test(navigator.userAgent))) {
+            initBanner();
+        }
     }
 
     function initBanner() {
         if (AdMob) {
-            banner = AdMob.createBanner({
+            AdMob.createBanner({
                 adId: localStorage.bannerId,
                 position: AdMob.AD_POSITION.BOTTOM_CENTER,
                 autoShow: true,

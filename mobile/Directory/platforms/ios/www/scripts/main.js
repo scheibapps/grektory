@@ -33,7 +33,6 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('deviceready', setDisabled.bind($('button')), false); //default buttons to disabled
-        document.addEventListener('deviceready', setConstraints.bind($('#main')), false);
         title.textContent = localStorage.dbname;
         requestData();
         $('#menu').change(onMenuChange);
@@ -60,11 +59,6 @@
             current_directory = directory_input_all;
         }
         loadTable();
-    }
-
-    function setConstraints() {
-        var height = page.offsetHeight - (header.offsetHeight);
-        $('#main').attr("style", "height: " + height + "px");
     }
 
     //Enables buttons if table is click
@@ -96,7 +90,6 @@
                 filterTable(elem.val());
             }
         });
-        setConstraints();
     }
 
     //FILTERS TABLE, USED BY SEARCHBAR

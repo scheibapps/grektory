@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://grektory.herokuapp.com http://i.imgur.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <title>Directory</title>
+    <!-- Directory references -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-role="page" id="page"  data-position="fixed">
+        <div id="load"></div>
+        <div data-role="header" data-position="fixed" class="header" id="header" align="center">
+           <div align="left" id="menu-div"  data-position="fixed">
+                <select id="menu" data-iconpos="notext">
+                    <option class="menu-option" id="all">ALL MEMBERS</option>
+                    <option class="menu-option" id="active">ACTIVE</option>
+                    <option class="menu-option" id="alumni">ALUMNI</option>
+                </select>
+            </div>
+            <h1 id="title">Directory</h1>
+            <div id="search_div"  data-position="fixed">
+                <input type="text" placeholder="Search..." id="search" maxlength="50" />
+            </div>
+            <div id="menu_list"  data-position="fixed">
+                <button id="call" class="ui-btn ui-icon-phone ui-btn-icon-notext">CALL</button>
+                <button id="text" class="ui-btn ui-icon-comment ui-btn-icon-notext">TEXT</button>
+                <button id="email" class="ui-btn ui-icon-mail ui-btn-icon-notext">EMAIL</button>
+                <button id="add" class="ui-btn ui-icon-plus ui-btn-icon-notext">ADD</button>
+            </div>
+        </div>
+        <div id="content" data-position="fixed" class="ui-content">
+            <ul id="directory" data-role="listview" class="ui-listview"></ul>
+        </div>
+    </div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/jquery-2.2.1.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/parse-1.6.14.js"></script>
+</body>
+</html>
